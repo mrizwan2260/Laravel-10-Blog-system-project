@@ -14,21 +14,17 @@ class UpdateRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
-     */
+
     public function rules(): array
     {
         return [
-            'image' => ['nullable','mimes:png,jpg,gif,jpeg','image'],
-            'title' => ['required','max:255','string'],
-            'description' => ['required','max:3000'],
-            'is_publish' => ['required','integer','max:255'],
-            'category' => ['required','integer','max:255'],
-            'tags' => ['required','array'],
-            'tags.*' => ['required','string','max:255'],
+            'image'         => ['nullable', 'mimes:png,jpg,gif,jpeg', 'image'],
+            'title'         => ['required', 'max:255', 'string'],
+            'description'   => ['required', 'max:3000'],
+            'is_publish'    => ['required', 'integer', 'max:255'],
+            'category'      => ['required', 'integer', 'max:255'],
+            'tags'          => ['required', 'array'],
+            'tags.*'        => ['required', 'string', 'max:255'],
         ];
     }
 }

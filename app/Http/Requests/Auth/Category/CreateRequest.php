@@ -23,7 +23,7 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','unique:categories,name','min:3','max:25'],
+            'name' => ['required', 'unique:categories,name', 'min:3', 'max:25'],
         ];
     }
 }

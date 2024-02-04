@@ -2,9 +2,9 @@
 @section('title', 'Category')
 @section('style')
     <style>
-        .table{
+        .table {
             text-align: center;
-        },
+        }
     </style>
 @endsection
 @section('content')
@@ -30,10 +30,12 @@
                         <tr>
                             <td>{{ $category->name }}</td>
                             <td>
-                                <form id="delete-form-{{ $category->id }}" action="{{ route('category.destroy', $category->id) }}" method="post">
+                                <form id="delete-form-{{ $category->id }}"
+                                    action="{{ route('category.destroy', $category->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button id="delete" type="submit" class="btn btn-danger btn-square btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                    <button id="delete" type="submit" class="btn btn-danger btn-square btn-sm"><i
+                                            class="fa-solid fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -43,12 +45,10 @@
         </div>
     </div>
 @section('script')
-
-<script>
-    $(document).ready(function() {
-        $('.table').DataTable();
-    });
-</script>
-
+    <script>
+        $(document).ready(function() {
+            $('.table').DataTable();
+        });
+    </script>
 @endsection
 @endsection
